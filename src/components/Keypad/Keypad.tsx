@@ -1,13 +1,20 @@
+"use client";
 import React from "react";
 import styles from "./Keypad.module.scss";
 import { HiBackspace } from "react-icons/hi";
 type Props = {};
 
 const Keypad = (props: Props) => {
+    const test = "2*4+5";
+  const testFunc = () => {
+    console.log("test", eval(test));
+  };
   return (
     <div className={styles.keypadDiv}>
       <div className={styles.keypadRow}>
-        <button className={styles.keypadButton}>AC</button>
+        <button onClick={testFunc} className={styles.keypadButton}>
+          AC
+        </button>
         <button className={styles.keypadButton}>%</button>
         <button className={styles.keypadButton}>/</button>
         <button className={styles.keypadButton}>
