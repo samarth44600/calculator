@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Input.module.scss";
+import { numberValidation } from "@/utils/numberValidation";
 type Props = {
   input: string;
   output: number;
@@ -14,6 +15,7 @@ const Input = ({ input, output, setInput, setOutput }: Props) => {
         <input
           placeholder="0"
           type="text"
+          onKeyDown={numberValidation}
           name="input"
           autoFocus
           autoComplete="false"
@@ -27,7 +29,7 @@ const Input = ({ input, output, setInput, setOutput }: Props) => {
           name="output"
           placeholder="0"
           value={output}
-          disabled
+          readOnly
         />
       </div>
     </div>
