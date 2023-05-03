@@ -5,8 +5,7 @@ export const numberValidation = (evt: any) => {
     if (theEvent.type === 'paste' && typeof window !== "undefined") {
         key = navigator.clipboard.read();
         // key = window.event?.clipboardData.getData('text/plain');
-        console.log("read key", key);
-        console.log("read only", navigator.clipboard.readText);
+
 
 
     } else {

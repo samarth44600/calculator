@@ -4,13 +4,13 @@ export const solveEquation = (equation: any) => {
     let operatorsFound = equation.match(/[\+\-\*\/]/g);
 
     if (!operands || !operatorsFound || operands.length <= 1) {
-        return NaN;
+        return ;
     }
 
     while (operatorsFound.length > 0) {
         let operatorIndex = operators.indexOf(operatorsFound[0]);
         if (operatorIndex === -1) {
-            return NaN;
+            return ;
         }
 
         let operand1 = parseFloat(operands.shift());
@@ -31,7 +31,7 @@ export const solveEquation = (equation: any) => {
                 result = operand1 / operand2;
                 break;
             default:
-                return NaN;
+                return ;
         }
 
         operands.unshift(result.toString());
