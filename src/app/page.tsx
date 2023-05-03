@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [input, setInput] = useState<string>("");
-  const [output, setOutput] = useState<number>(0);
+  const [output, setOutput] = useState<number >(0);
 
   return (
     <main className={styles.mainDiv}>

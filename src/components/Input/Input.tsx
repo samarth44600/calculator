@@ -21,6 +21,8 @@ const Input = ({ input, output, setInput, setOutput }: Props) => {
           autoComplete="false"
           value={input}
           onChange={(e) => setInput(e.target.value.toString())}
+          // readOnly
+          aria-autocomplete="none"
         />
       </div>
       <div className={styles.output}>

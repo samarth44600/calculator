@@ -7,7 +7,7 @@ type Props = {
   input: string;
   output: number;
   setInput: (input: string) => void;
-  setOutput: (output: number) => void;
+  setOutput: (output: number ) => void;
 };
 
 const Keypad = ({ input, output, setInput, setOutput }: Props) => {
