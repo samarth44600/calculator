@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import React, { useEffect } from "react";
 import styles from "./Keypad.module.scss";
@@ -11,16 +12,16 @@ type Props = {
 };
 
 const Keypad = ({ input, output, setInput, setOutput }: Props) => {
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    console.log(e.key);
-  };
+  // const handleKeyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
+  //   console.log(e.key);
+  // };
   const digitalInput = (value: string) => {
     setInput(input + value.toString());
   };
 
   const handleCalculate = () => {
     setOutput(solveEquation(input));
-    console.log("input", input);
+    // console.log("input", input);
   };
 
   const backspace = () => {
@@ -38,10 +39,16 @@ const Keypad = ({ input, output, setInput, setOutput }: Props) => {
 
   useEffect(() => {
     const keyPress = (e: KeyboardEvent) => {
-      console.log("keyPressed", e.key);
+      // console.log("keyPressed", e.key);
 
       if (e.key === "Enter") {
         handleCalculate();
+      }
+      if (e.key === "Backspace") {
+        backspace();
+      }
+      if (e.key === "Escape") {
+        allClear();
       }
     };
     window.addEventListener("keydown", keyPress);
@@ -53,7 +60,11 @@ const Keypad = ({ input, output, setInput, setOutput }: Props) => {
   return (
     <div className={styles.keypadDiv}>
       <div className={styles.keypadRow}>
-        <button className={styles.keypadButton} onClick={allClear}>
+        <button
+          className={styles.keypadButton}
+          onClick={allClear}
+          title='Enter "Esc" key to clear all'
+        >
           AC
         </button>
         <button className={styles.keypadButton}>%</button>
