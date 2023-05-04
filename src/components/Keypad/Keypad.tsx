@@ -5,9 +5,9 @@ import { HiBackspace } from "react-icons/hi";
 import { solveEquation } from "@/utils/calculator";
 type Props = {
   input: string;
-  output: number;
+  output: number | undefined;
   setInput: (input: string) => void;
-  setOutput: (output: number ) => void;
+  setOutput: (output: number | undefined) => void;
 };
 
 const Keypad = ({ input, output, setInput, setOutput }: Props) => {
@@ -48,7 +48,7 @@ const Keypad = ({ input, output, setInput, setOutput }: Props) => {
     return () => {
       window.removeEventListener("keydown", keyPress);
     };
-  }, []);
+  }, [input]);
 
   return (
     <div className={styles.keypadDiv}>

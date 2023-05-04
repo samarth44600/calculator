@@ -3,7 +3,7 @@ import styles from "./Input.module.scss";
 import { numberValidation } from "@/utils/numberValidation";
 type Props = {
   input: string;
-  output: number;
+  output: number | undefined;
   setInput: (input: string) => void;
   setOutput: (output: number) => void;
 };
