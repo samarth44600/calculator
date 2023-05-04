@@ -1,0 +1,96 @@
+.keypadDiv {
+  .keypadRow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    .keypadButton {
+      font-size: 1.6rem;
+      font-weight: 500;
+      height: 90%;
+      border: 1px solid #000;
+      border-radius: 50%;
+      padding: 1rem;
+      margin: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover,
+      &:focus {
+        background-color: #d4d4d2df;
+        color: #fff;
+        cursor: pointer;
+      }
+      &:active {
+        background-color: #d4d4d2;
+        color: #fff;
+      }
+
+      &:last-child {
+        background-color: #ff9500;
+        color: #fff;
+
+        &:hover,
+        &:focus {
+          background-color: #ff9500d7;
+          color: #fff;
+        }
+        &:active {
+          background-color: #ff9500;
+          color: #fff;
+        }
+      }
+    }
+
+    &:first-child {
+      .keypadButton {
+        background-color: #d4d4d2;
+        color: #000;
+
+        &:hover,
+        &:focus {
+          background-color: #d4d4d2df;
+          color: #fff;
+        }
+        &:active {
+          background-color: #d4d4d2;
+          color: #fff;
+        }
+
+        &:last-child {
+          background-color: #ff9500;
+          color: #fff;
+
+          &:hover,
+          &:focus {
+            background-color: #ff9500d7;
+            color: #fff;
+          }
+          &:active {
+            background-color: #ff9500;
+            color: #fff;
+          }
+        }
+      }
+    }
+    &:last-child {
+      .keypadButton {
+        &:first-child {
+          grid-column: 1/3;
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+}
+
+// color scheme
+// #D4D4D2 grey
+// #1C1C1C black
+// #505050 dark grey
+// #FF9500 yellow
