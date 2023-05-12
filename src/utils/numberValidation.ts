@@ -1,4 +1,5 @@
 export const numberValidation = (evt: any) => {
+    // evt.preventDefault();
     var theEvent = evt || window.event;
 
     // Handle paste

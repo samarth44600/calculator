@@ -23,6 +23,7 @@ const Input = ({ input, output, setInput, setOutput }: Props) => {
           onChange={(e) => setInput(e.target.value.toString())}
           // readOnly
           aria-autocomplete="none"
+          inputMode="none"
         />
       </div>
       <div className={styles.output}>
